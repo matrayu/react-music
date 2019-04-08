@@ -3,7 +3,7 @@
 import React from "react";
 
 import App from "./components/App";
-import { SelectableComponents } from "fsr-helpers";
+import { SelectableComponents } from "../fsr-helpers";
 import App1 from "./components-complete/App-1";
 import App2 from "./components-complete/App-2";
 import App3 from "./components-complete/App-3";
