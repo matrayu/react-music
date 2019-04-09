@@ -3,6 +3,8 @@ import React from 'react';
 import TopBar from './TopBar';
 import AlbumsContainer from './AlbumsContainer';
 
+import { Route } from 'react-router-dom';
+
 import '../styles/App.css';
 
 const App = () => (
@@ -10,7 +12,7 @@ const App = () => (
     <TopBar />
     <div className='spacer row' />
     <div className='row'>
-      <AlbumsContainer />
+      <Route path='/albums' component={AlbumsContainer} />
     </div>
   </div>
 );

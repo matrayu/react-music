@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 
 import Album from './Album';
+import VerticalMenu from './VerticalMenu';
 import { client } from '../Client';
+import { Route } from 'react-router-dom';
 
 const ALBUM_IDS = [
   '23O4F21GDWiGd33tFN3ZgI',
@@ -44,19 +46,20 @@ class AlbumsContainer extends Component {
             className='ui six wide column'
             style={{ maxWidth: 250 }}
           >
-            {/* VerticalMenu will go here */}
+            <VerticalMenu albums={this.state.albums} />
           </div>
           <div className='ui ten wide column'>
-            {
-              this.state.albums.map((a) => (
-                <div
-                  className='row'
-                  key={a.id}
-                >
-                  <Album album={a} />
-                </div>
-              ))
-            }
+            <Route
+              path='/albums/:albumId'
+              render={({ match }) => {
+                const album = this.state.albums.find(
+                  (a) => a.id === match.params.albumId
+                );
+                return (
+                  <Album album={album} />
+                );
+              }}
+            />
           </div>
         </div>
       );
