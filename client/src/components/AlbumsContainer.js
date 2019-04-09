@@ -35,6 +35,7 @@ class AlbumsContainer extends Component {
   };
 
   render() {
+    const matchPath = this.props.match.path;
     if (!this.state.fetched) {
       return (
         <div className='ui active centered inline loader' />
@@ -46,17 +47,27 @@ class AlbumsContainer extends Component {
             className='ui six wide column'
             style={{ maxWidth: 250 }}
           >
-            <VerticalMenu albums={this.state.albums} />
+            <VerticalMenu 
+              albums={this.state.albums}
+              albumsPathname={matchPath}  
+            />
           </div>
           <div className='ui ten wide column'>
             <Route
-              path='/albums/:albumId'
+              path={`${matchPath}/:albumId`}
+              /* The parentheses ( ... ) around the assignment statement are required 
+              when using object literal destructuring assignment without a declaration. 
+              Your ( ... ) expression needs to be preceded by a semicolon or it may be 
+              used to execute a function on the previous line.*/
               render={({ match }) => {
                 const album = this.state.albums.find(
                   (a) => a.id === match.params.albumId
                 );
                 return (
-                  <Album album={album} />
+                  <Album 
+                    album={album}
+                    albumsPathname={matchPath}  
+                  />
                 );
               }}
             />
