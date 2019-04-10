@@ -24,7 +24,7 @@ class AlbumsContainer extends Component {
   }
 
   getAlbums = () => {
-    client.setToken('D6W69PRgCoDKgHZGJmRUNA');
+    /* client.setToken('D6W69PRgCoDKgHZGJmRUNA'); */
     client.getAlbums(ALBUM_IDS)
       .then((albums) => (
         this.setState({

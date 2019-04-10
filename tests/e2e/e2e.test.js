@@ -58,29 +58,29 @@ function pushUrl(client, url) {
   })
 }
 
-// function assertTokenInLocalStorage(client) {
-//   client.execute(function() {
-//     // Welp.
-//     return Object.assign({}, window.localStorage);
-//   }, [], function(result) {
-//     client.assert(
-//       result.value.getItem('fsr-spotify-fake-auth'),
-//       'D6W69PRgCoDKgHZGJmRUNA'
-//     )
-//   })
-// }
-//
-// function assertTokenNotInLocalStorage(client) {
-//   client.execute(function() {
-//     // Welp.
-//     return Object.assign({}, window.localStorage);
-//   }, [], function(result) {
-//     client.assert(
-//       result.value.getItem('fsr-spotify-fake-auth'),
-//       null
-//     )
-//   })
-// }
+/* function assertTokenInLocalStorage(client) {
+   client.execute(function() {
+     // Welp.
+     return Object.assign({}, window.localStorage);
+   }, [], function(result) {
+     client.assert(
+       result.value.getItem('fsr-spotify-fake-auth'),
+       'D6W69PRgCoDKgHZGJmRUNA'
+     )
+   })
+ } */
+
+ /* function assertTokenNotInLocalStorage(client) {
+      client.execute(function() {
+     // Welp.
+     return Object.assign({}, window.localStorage);
+   }, [], function(result) {
+     client.assert(
+       result.value.getItem('fsr-spotify-fake-auth'),
+       null
+     )
+   })
+ } */
 
 module.exports = {
   before: function(client) {

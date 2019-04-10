@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import '../styles/VerticalMenu.css';
 
 const VerticalMenu = ({ albums, albumsPathname }) => (
@@ -9,13 +9,13 @@ const VerticalMenu = ({ albums, albumsPathname }) => (
     </div>
     {
       albums.map((album) => (
-        <Link
+        <NavLink
           to={`${albumsPathname}/${album.id}`}
           className='item'
           key={album.id}
         >
           {album.name}
-        </Link>
+        </NavLink>
       ))
     }
   </div>
