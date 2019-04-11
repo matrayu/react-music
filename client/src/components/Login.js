@@ -18,10 +18,19 @@ class Login extends Component {
     ));
   };
 
+  redirectPath = () => {
+    const locationState = this.props.location.state;
+    console.log(locationState)
+    const pathname = locationState.from.pathname;
+    console.log(locationState && locationState.from && locationState.from.pathname);
+    console.log(pathname);
+    return pathname || '/albums';
+  };
+
   render() {
     if (this.state.shouldRedirect) {
       return (
-        <Redirect to='/albums' />
+        <Redirect to={this.redirectPath()} />
       );
     } else {
       return (
